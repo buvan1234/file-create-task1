@@ -1,0 +1,83 @@
+buvanesh@LENOVO:~$ mkdir my_folder
+cd my_folder
+
+echo "This is my_file content" > my_file.txt
+echo "This is another_file content" > another_file.txt
+buvanesh@LENOVO:~/my_folder$ cat another_file.txt >> my_file.txt
+cat my_file.txt
+This is my_file content
+This is another_file content
+buvanesh@LENOVO:~/my_folder$ ^C
+buvanesh@LENOVO:~/my_folder$ ls -lh
+total 8.0K
+-rw-r--r-- 1 buvanesh buvanesh 29 Sep  5 12:50 another_file.txt
+-rw-r--r-- 1 buvanesh buvanesh 53 Sep  5 12:53 my_file.txt
+buvanesh@LENOVO:~/my_folder$ for i in {1..20}; do
+  echo "This is file number $i" > file$i.txt
+done
+buvanesh@LENOVO:~/my_folder$ for i in {1..5}; do
+  mv file$i.txt file$i.yml
+done
+buvanesh@LENOVO:~/my_folder$ ls -lt | head -5
+total 88
+-rw-r--r-- 1 buvanesh buvanesh 23 Sep  5 12:53 file13.txt
+-rw-r--r-- 1 buvanesh buvanesh 23 Sep  5 12:53 file14.txt
+-rw-r--r-- 1 buvanesh buvanesh 23 Sep  5 12:53 file15.txt
+-rw-r--r-- 1 buvanesh buvanesh 23 Sep  5 12:53 file16.txt
+buvanesh@LENOVO:~/my_folder$ ls -lt | head -5
+total 88
+-rw-r--r-- 1 buvanesh buvanesh 23 Sep  5 12:53 file13.txt
+-rw-r--r-- 1 buvanesh buvanesh 23 Sep  5 12:53 file14.txt
+-rw-r--r-- 1 buvanesh buvanesh 23 Sep  5 12:53 file15.txt
+-rw-r--r-- 1 buvanesh buvanesh 23 Sep  5 12:53 file16.txt
+buvanesh@LENOVO:~/my_folder$ ls -lt | tail -n +2 | head -5
+-rw-r--r-- 1 buvanesh buvanesh 23 Sep  5 12:53 file13.txt
+-rw-r--r-- 1 buvanesh buvanesh 23 Sep  5 12:53 file14.txt
+-rw-r--r-- 1 buvanesh buvanesh 23 Sep  5 12:53 file15.txt
+-rw-r--r-- 1 buvanesh buvanesh 23 Sep  5 12:53 file16.txt
+-rw-r--r-- 1 buvanesh buvanesh 23 Sep  5 12:53 file17.txt
+buvanesh@LENOVO:~/my_folder$ ls *.yml
+ls *.txt | wc -l
+file1.yml  file2.yml  file3.yml  file4.yml  file5.yml
+17
+buvanesh@LENOVO:~/my_folder$ ls file*.txt | wc -l   # Should be 15 task-generated txt files
+ls *.yml              # 5 yaml file
+15
+file1.yml  file2.yml  file3.yml  file4.yml  file5.yml
+buvanesh@LENOVO:~/my_folder$ cat my_file.txt
+This is my_file content
+This is another_file content
+buvanesh@LENOVO:~/my_folder$ ls -lh
+total 88K
+-rw-r--r-- 1 buvanesh buvanesh 29 Sep  5 12:50 another_file.txt
+-rw-r--r-- 1 buvanesh buvanesh 22 Sep  5 12:53 file1.yml
+-rw-r--r-- 1 buvanesh buvanesh 23 Sep  5 12:53 file10.txt
+-rw-r--r-- 1 buvanesh buvanesh 23 Sep  5 12:53 file11.txt
+-rw-r--r-- 1 buvanesh buvanesh 23 Sep  5 12:53 file12.txt
+-rw-r--r-- 1 buvanesh buvanesh 23 Sep  5 12:53 file13.txt
+-rw-r--r-- 1 buvanesh buvanesh 23 Sep  5 12:53 file14.txt
+-rw-r--r-- 1 buvanesh buvanesh 23 Sep  5 12:53 file15.txt
+-rw-r--r-- 1 buvanesh buvanesh 23 Sep  5 12:53 file16.txt
+-rw-r--r-- 1 buvanesh buvanesh 23 Sep  5 12:53 file17.txt
+-rw-r--r-- 1 buvanesh buvanesh 23 Sep  5 12:53 file18.txt
+-rw-r--r-- 1 buvanesh buvanesh 23 Sep  5 12:53 file19.txt
+-rw-r--r-- 1 buvanesh buvanesh 22 Sep  5 12:53 file2.yml
+-rw-r--r-- 1 buvanesh buvanesh 23 Sep  5 12:53 file20.txt
+-rw-r--r-- 1 buvanesh buvanesh 22 Sep  5 12:53 file3.yml
+-rw-r--r-- 1 buvanesh buvanesh 22 Sep  5 12:53 file4.yml
+-rw-r--r-- 1 buvanesh buvanesh 22 Sep  5 12:53 file5.yml
+-rw-r--r-- 1 buvanesh buvanesh 22 Sep  5 12:53 file6.txt
+-rw-r--r-- 1 buvanesh buvanesh 22 Sep  5 12:53 file7.txt
+-rw-r--r-- 1 buvanesh buvanesh 22 Sep  5 12:53 file8.txt
+-rw-r--r-- 1 buvanesh buvanesh 22 Sep  5 12:53 file9.txt
+-rw-r--r-- 1 buvanesh buvanesh 53 Sep  5 12:53 my_file.txt
+buvanesh@LENOVO:~/my_folder$ ls -lt | tail -n +2 | head -5
+-rw-r--r-- 1 buvanesh buvanesh 23 Sep  5 12:53 file13.txt
+-rw-r--r-- 1 buvanesh buvanesh 23 Sep  5 12:53 file14.txt
+-rw-r--r-- 1 buvanesh buvanesh 23 Sep  5 12:53 file15.txt
+-rw-r--r-- 1 buvanesh buvanesh 23 Sep  5 12:53 file16.txt
+-rw-r--r-- 1 buvanesh buvanesh 23 Sep  5 12:53 file17.txt
+buvanesh@LENOVO:~/my_folder$ ls *.yml
+ls *.txt | wc -l
+file1.yml  file2.yml  file3.yml  file4.yml  file5.yml
+17
