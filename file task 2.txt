@@ -1,0 +1,28 @@
+buvanesh@LENOVO:~$ cd ~/my_folder
+buvanesh@LENOVO:~/my_folder$ for i in {1..20}; do
+  echo "This is file number $i" > file$i.txt
+done
+buvanesh@LENOVO:~/my_folder$ for i in {1..5}; do
+  mv file$i.txt file$i.yml
+done
+buvanesh@LENOVO:~/my_folder$ ls -lt | tail -n +2 | head -5
+-rw-r--r-- 1 buvanesh buvanesh   22 Sep  5 13:55 file1.yml
+-rw-r--r-- 1 buvanesh buvanesh   23 Sep  5 13:55 file10.txt
+-rw-r--r-- 1 buvanesh buvanesh   23 Sep  5 13:55 file11.txt
+-rw-r--r-- 1 buvanesh buvanesh   23 Sep  5 13:55 file12.txt
+-rw-r--r-- 1 buvanesh buvanesh   23 Sep  5 13:55 file13.txt
+buvanesh@LENOVO:~/my_folder$ ls *.yml
+ls *.txt | wc -l
+file1.yml  file2.yml  file3.yml  file4.yml  file5.yml
+17
+buvanesh@LENOVO:~/my_folder$ ls -lt | tail -n +2 | head -5
+-rw-r--r-- 1 buvanesh buvanesh   23 Sep  5 13:57 file10.txt
+-rw-r--r-- 1 buvanesh buvanesh   23 Sep  5 13:57 file11.txt
+-rw-r--r-- 1 buvanesh buvanesh   23 Sep  5 13:57 file12.txt
+-rw-r--r-- 1 buvanesh buvanesh   23 Sep  5 13:57 file13.txt
+-rw-r--r-- 1 buvanesh buvanesh   23 Sep  5 13:57 file14.txt
+buvanesh@LENOVO:~/my_folder$ ls *.yml
+ls *.txt | wc -l
+file1.yml  file2.yml  file3.yml  file4.yml  file5.yml
+22
+buvanesh@LENOVO:~/my_folder$
